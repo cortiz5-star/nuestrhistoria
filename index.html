@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#8ec9db" />
+    <meta name="description" content="Nuestra Historia de Amor: un libro digital para leer, recordar y seguir escribiendo." />
+    <title>Nuestra Historia de Amor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Ir al inicio del libro">
+          <span class="brand-mark" aria-hidden="true">♡</span>
+          <span class="brand-name">Nuestra Historia</span>
+        </a>
+        <div class="topbar-actions">
+          <button class="icon-button" id="tocToggle" type="button" aria-expanded="false" aria-controls="tocPanel">
+            <span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="sr-only">Abrir índice</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="intro" aria-labelledby="pageTitle">
+          <p class="eyebrow"><span class="eyebrow-heart">♡</span> Un libro para volver a encontrarnos</p>
+          <h1 id="pageTitle">Nuestra <em>Historia</em> de Amor</h1>
+          <p class="intro-copy">Una historia que comenzó sin avisar y eligió quedarse para siempre.</p>
+          <button class="start-reading" id="startReading" type="button">
+            <span>Comenzar a leer</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </section>
+
+        <section class="reader-section" aria-label="Lector del libro">
+          <div class="reader-heading">
+            <div>
+              <p class="section-kicker">Edición íntima · 2026</p>
+              <h2 id="currentChapter">Portada</h2>
+            </div>
+            <div class="reading-status" aria-live="polite">
+              <span id="pageLabel">Página 1 de 150</span>
+              <span class="status-dot" aria-hidden="true"></span>
+              <span id="readingHint">Desliza para pasar</span>
+            </div>
+          </div>
+
+          <div class="book-stage" id="bookStage">
+            <div class="book-shadow" aria-hidden="true"></div>
+            <article class="book-page" id="bookPage" tabindex="0" aria-live="polite" aria-label="Página 1 de 150">
+              <div class="page-edge page-edge-one" aria-hidden="true"></div>
+              <div class="page-edge page-edge-two" aria-hidden="true"></div>
+              <div class="page-content" id="pageContent"></div>
+              <span class="page-corner" aria-hidden="true"></span>
+            </article>
+            <div class="swipe-hint" id="swipeHint" aria-hidden="true">
+              <span>desliza</span><span class="hint-line"></span><span>→</span>
+            </div>
+          </div>
+
+          <div class="reader-controls">
+            <button class="control-button previous" id="prevPage" type="button" aria-label="Página anterior" disabled>
+              <span aria-hidden="true">←</span><span>Anterior</span>
+            </button>
+            <div class="progress-wrap" aria-label="Progreso de lectura">
+              <div class="progress-track"><span id="progressBar"></span></div>
+              <span id="progressPercent">0%</span>
+            </div>
+            <button class="control-button next" id="nextPage" type="button" aria-label="Página siguiente">
+              <span>Siguiente</span><span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="chapter-strip" aria-labelledby="chapterStripTitle">
+          <div class="strip-copy">
+            <p class="section-kicker">El hilo de la historia</p>
+            <h2 id="chapterStripTitle">Doce capítulos para volver a vivirlo todo.</h2>
+          </div>
+          <button class="outline-button" id="openIndex" type="button">Ver índice <span aria-hidden="true">↗</span></button>
+        </section>
+
+        <section class="memory-note" aria-label="Nota para personalizar">
+          <div class="memory-icon" aria-hidden="true">✦</div>
+          <div>
+            <p class="section-kicker">Un libro que puede seguir creciendo</p>
+            <h2>Las páginas que faltan también son nuestras.</h2>
+            <p>Al final encontrarás espacios para añadir nombres, fechas, lugares, fotos, canciones y esos recuerdos que solo ustedes conocen.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Hecho para una historia que continúa.</span>
+        <span class="footer-heart" aria-hidden="true">♡</span>
+      </footer>
+    </div>
+
+    <aside class="toc-panel" id="tocPanel" aria-hidden="true" aria-labelledby="tocTitle">
+      <div class="toc-backdrop" id="tocBackdrop"></div>
+      <div class="toc-drawer">
+        <div class="toc-header">
+          <div>
+            <p class="section-kicker">El libro</p>
+            <h2 id="tocTitle">Índice</h2>
+          </div>
+          <button class="close-button" id="tocClose" type="button" aria-label="Cerrar índice">×</button>
+        </div>
+        <p class="toc-intro">Cada capítulo guarda una forma distinta de volver a encontrarnos.</p>
+        <nav id="chapterNav" class="chapter-nav" aria-label="Capítulos del libro"></nav>
+      </div>
+    </aside>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
